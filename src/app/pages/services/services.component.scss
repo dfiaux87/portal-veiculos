@@ -1,0 +1,109 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .titulo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .filtro-container {
+    margin-bottom: 1.5rem;
+  
+    .filtro-input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+  
+      &:focus {
+        outline: none;
+        border-color: #4a90e2;
+        box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+      }
+    }
+  }
+  
+  .servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .servico-card {
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: box-shadow 0.3s ease;
+  
+    &:hover {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .servico-titulo {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .servico-descricao {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  
+  .servico-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .servico-preco {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #2ecc71;
+  }
+  
+  .servico-tempo {
+    font-size: 0.875rem;
+    color: #777;
+  }
+  
+  .servico-botao {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &.disponivel {
+      background-color: #4a90e2;
+      color: white;
+  
+      &:hover {
+        background-color: darken(#4a90e2, 10%);
+      }
+    }
+  
+    &.indisponivel {
+      background-color: #ccc;
+      color: #666;
+      cursor: not-allowed;
+    }
+  }

@@ -1,0 +1,44 @@
+<div class="container">
+    <h2 class="titulo">Serviços Automotivos</h2>
+    
+    <!-- Filtro -->
+    <div class="filtro-container">
+      <input
+        type="text"
+        [(ngModel)]="filtro"
+        (ngModelChange)="filtrarServicos()"
+        placeholder="Buscar serviços..."
+        class="filtro-input"
+      >
+    </div>
+  
+    <!-- Grid de Serviços -->
+    <div class="servicos-grid">
+      @for (servico of servicosFiltrados; track servico.id) {
+        <div class="servico-card">
+          <h3 class="servico-titulo">{{servico.nome}}</h3>
+          <p class="servico-descricao">{{servico.descricao}}</p>
+          <div class="servico-info">
+            <span class="servico-preco">
+              R$ {{servico.preco.toFixed(2)}}
+            </span>
+            <span class="servico-tempo">
+              Tempo estimado: {{servico.tempoEstimado}}
+            </span>
+          </div>
+          <button
+            (click)="agendarServico(servico)"
+            [disabled]="!servico.disponivel"
+            class="servico-botao"
+            [ngClass]="{
+              'disponivel': servico.disponivel,
+              'indisponivel': !servico.disponivel
+            }"
+          >
+            {{servico.disponivel ? 'Agendar Serviço' : 'Indisponível'}}
+          </button>
+        </div>
+      }
+    </div>
+    <button class="btn-secondary" [routerLink]="'/'">Voltar para a Página Principal</button>
+  </div>

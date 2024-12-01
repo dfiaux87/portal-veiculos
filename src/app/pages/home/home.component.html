@@ -1,0 +1,38 @@
+<div class="hero-section">
+    <div class="hero-content">
+    <h1>Transformamos a experiência automotiva!</h1>
+    <p>Descubra serviços de manutenção e diagnósticos inovadores.</p>
+    </div>
+</div>
+  
+  
+  <div class="services-section">
+    <h2>Nossos Serviços</h2>
+    <div class="services-list">
+      <div class="service-item" (click)="navegarParaLista()">
+        <img src="assets/icons/maintenance.svg" alt="Manutenção"  />
+        <h3>Manutenção</h3>
+        <p>Cuidados completos para o seu veículo.</p>
+      </div>
+      <div class="service-item">
+        <img src="assets/icons/diagnostics.svg" alt="Diagnóstico" />
+        <h3>Diagnóstico</h3>
+        <p>Identificação precisa de problemas.</p>
+      </div>
+      <div class="service-item">
+        <img src="assets/icons/revisions.svg" alt="Revisão" />
+        <h3>Revisões</h3>
+        <p>Preparação completa e segura.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="contact-section">
+    <h2>Entre em Contato</h2>
+    <p>Estamos prontos para atender você.</p>
+    <button class="btn-primary" [routerLink]="'/agendamento'">Agende agora mesmo!</button>
+    <button class="btn-whatsapp">
+      <img src="assets/icons/whatsapp.svg" alt="WhatsApp" /> Fale Conosco
+    </button>
+  </div>
+  

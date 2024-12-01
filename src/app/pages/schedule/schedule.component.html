@@ -1,0 +1,27 @@
+<div class="schedule-container">
+    <h1>Agende seu Serviço</h1>
+    <p>Escolha a data e o horário mais convenientes para você.</p>
+    <form (ngSubmit)="submitForm()">
+      <label for="date">Data:</label>
+      <input type="date" id="date" name="date" [(ngModel)]="schedule.date" required />
+  
+      <label for="time">Horário:</label>
+      <input
+        type="time"
+        id="time"
+        name="time"
+        [(ngModel)]="schedule.time"
+        required
+        min="09:00"
+        max="18:00"
+      />
+  
+      <button type="submit" class="btn-primary">Confirmar Agendamento</button>
+    </form>
+
+    <button class="btn-secondary" [routerLink]="'/'">Voltar para a Página Principal</button>
+    
+  </div>
+  
+
+  
